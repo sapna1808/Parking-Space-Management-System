@@ -10,9 +10,7 @@
         <title>MetroPark</title>
         <link rel="stylesheet" href="style.css">
         <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-        <meta name="description" content="In this css image slider tutorials we build pure css image slider without using any javascript. Let's have a look the demo and download source code." />
-<meta name="keywords" content="tutorial,css3,image slider,css,html,html5,css slider,slider,gallery,css transitions" />
-<!-- CSS FILES -->
+        
 <link href="css/demo.css" media="screen, projection" rel="stylesheet" type="text/css">
 <link href="css/component.css" media="screen, projection" rel="stylesheet" type="text/css">
 <style>
@@ -31,7 +29,7 @@
               <li><a href="index.php">Home</a></li>
               <li><a href="adminlogin.php">Admin</a></li>
               <li><a href="login.php">Login</a></li>
-              <li><a href="help.html">Help</a></li>
+              <li><a href="help.php">Contact Us</a></li>
             </ul>
           </nav> 
         </div>

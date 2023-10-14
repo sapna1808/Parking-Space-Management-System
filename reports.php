@@ -89,7 +89,60 @@
 				
 				
 				
-</div><!--/.row-->
+			</div><!--/.row-->
+
+			<div class="col-md-6">
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								Highlights - IN | OUT 
+								
+								<span class="pull-right clickable panel-toggle panel-button-tab-left"><em class="fa fa-toggle-up"></em></span></div>
+								<div class="panel-body">
+								<div class="canvas-wrapper">
+									<canvas class="chart" id="myChart" height="160" ></canvas>
+
+								</div>
+
+							</div>
+						</div>
+					</div>
+
+					<div class="col-md-6">
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								Highlights - Vehicle Category
+								
+								<span class="pull-right clickable panel-toggle panel-button-tab-left"><em class="fa fa-toggle-up"></em></span></div>
+								<div class="panel-body">
+								<div class="canvas-wrapper">
+									<canvas class="chart" id="myChart2" height="160" ></canvas>
+
+								</div>
+
+							</div>
+						</div>
+					</div>
+				</div> <!-- /.row -->
+				
+				<?php 
+
+				include 'includes/dbconn.php';
+				$ret=mysqli_query($con,"SELECT count(ID) id1 from vehicle_info where Status=''");
+				$row5=mysqli_fetch_array($ret);
+				
+				$ret=mysqli_query($con,"SELECT count(ID) id2 from vehicle_info where Status='Out'");
+				$row6=mysqli_fetch_array($ret);
+
+				$ret=mysqli_query($con,"SELECT count(ID) as id1 from vehicle_info where VehicleCategory='Two Wheeler'");
+				$row=mysqli_fetch_array($ret);  
+					
+				$ret=mysqli_query($con,"SELECT count(ID) as id2 from vehicle_info where VehicleCategory='Four Wheeler'");
+				$row2=mysqli_fetch_array($ret); 
+
+				$ret=mysqli_query($con,"SELECT count(ID) as id4 from vehicle_info where VehicleCategory='Three Wheeler'");
+				$row4=mysqli_fetch_array($ret);
+				
+				?>
 		
 		
 		

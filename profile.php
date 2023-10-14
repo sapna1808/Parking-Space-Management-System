@@ -6,18 +6,16 @@
 	header('location:logout.php');
 	} else {
 
-	if(isset($_POST['submit-vehicle'])) {
-		$parkingnumber=mt_rand(10000, 99999);
-		$catename=$_POST['catename'];
-		$vehcomp=$_POST['vehcomp'];
-		$vehreno=$_POST['vehreno'];
-		$ownername=$_POST['ownername'];
-		$ownercontno=$_POST['ownercontno'];
-		$enteringtime=$_POST['enteringtime'];
+	if(isset($_POST['submit-details'])) {
+		$userfullname=$_POST['userfullname'];
+		$gen=$_POST['gen'];
+		$emailid=$_POST['emailid'];
+		$usercontno=$_POST['usercontno'];
+		
 			
-		$query=mysqli_query($con, "INSERT into vehicle_info(ParkingNumber,VehicleCategory,VehicleCompanyname,RegistrationNumber,OwnerName,OwnerContactNumber) value('$parkingnumber','$catename','$vehcomp','$vehreno','$ownername','$ownercontno')");
+		$query=mysqli_query($con, "INSERT INTO `userdetail`(`name`, `Email`, `gender`, `Phone no`) VALUES ('$userfullname','$emailid','$gen','$usercontno')");
 		if ($query) {
-			echo "<script>alert('Vehicle Entry Detail has been added');</script>";
+			echo "<script>alert('User Details has been updated');</script>";
 			echo "<script>window.location.href ='userdashboard.php'</script>";
 		} else {
 			echo "<script>alert('Something Went Wrong');</script>";       
@@ -44,7 +42,7 @@
         <?php include 'includes/navigation.php' ?>
 	
 		<?php
-		$page="manage-vehicles";
+		$page="profile";
 		include 'includes/sidebar1.php'
 		?>
 		
@@ -76,35 +74,27 @@
 
 							<form method="POST">
 							
-
 								<div class="form-group">
 									<label>Full Name</label>
-									<input type="text" class="form-control" placeholder="LOL-1869" id="vehreno" name="vehreno" required>
+									<input type="text" class="form-control" placeholder="Name" id="userfullname" name="userfullname" required>
 								</div>
-
 
 								<div class="form-group">
 									<label>Gender</label>
-									<input type="text" class="form-control" placeholder="Tesla" id="vehcomp" name="vehcomp" required>
+									<input type="text" class="form-control" placeholder="Gender" id="gen" name="gen" required>
 								</div>
 								
-						
-						
-									
-
 								<div class="form-group">
 									<label>Email</label>
-									<input type="text" class="form-control" placeholder="Enter Here.." id="ownername" name="ownername" required>
+									<input type="text" class="form-control" placeholder="Email Id" id="emailid" name="emailid" required>
 								</div>
-
 
 								<div class="form-group">
 									<label>Contact Number</label>
-									<input type="text" class="form-control" placeholder="Enter Here.." maxlength="10" pattern="[0-9]+" id="ownercontno" name="ownercontno" required>
+									<input type="text" class="form-control" placeholder="Enter Here" maxlength="10" pattern="[0-9]+" id="usercontno" name="usercontno" required>
 								</div>
 
-
-									<button type="submit" class="btn btn-success" name="submit-vehicle">Submit</button>
+									<button type="submit" class="btn btn-success" name="submit-details">Submit</button>
 									<button type="reset" class="btn btn-default">Reset</button>
 								</div> <!--  col-md-12 ends -->
 								
